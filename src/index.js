@@ -12,8 +12,6 @@ const observable = new Observable((subscriber) => {
   };
 });
 
-console.log('before');
-
 const subscription = observable.subscribe({
   next: (value) => console.log(value),
   error: (err) => console.error(err),
@@ -23,5 +21,3 @@ const subscription = observable.subscribe({
 setTimeout(() => {
   subscription.unsubscribe();
 }, 3000);
-
-console.log('after');
